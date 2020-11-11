@@ -1,0 +1,17 @@
+{
+  "name": "webrtc-signal-server",
+  "version": "1.0.0",
+  "description": "A simple signal server for webrtc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Duman Haydar",
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4",
+    "wrtc": "^0.4.6"
+  }
+}
