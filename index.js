@@ -9,16 +9,16 @@ io.on('connection', function (socket) {
     var myRoom = io.sockets.adapter.rooms[room] || { length: 0 };
     var numClients = myRoom.length;
 
-    if (numClients < 2) {
       socket.join(room);
-      socket.emit('joined', room, {isCaller: !Boolean(numClients)});
-    } else {
-      socket.emit('full', room);
-    }
+      socket.emit('joined', room);
   });
 
   socket.on('ready', function (room){
     socket.broadcast.to(room).emit('ready');
+  });
+
+  socket.on('call', function (room){
+    socket.broadcast.to(room).emit('call');
   });
 
   socket.on('candidate', function (event){
